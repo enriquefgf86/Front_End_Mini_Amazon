@@ -173,6 +173,7 @@ export default new Vuex.Store({
         credentials: "include",
         headers: {
           "Content-Type": "application/json",
+         
         },
         method: "POST",
         body: JSON.stringify(ratePack),
@@ -454,6 +455,7 @@ export default new Vuex.Store({
         credentials: "include",
         headers: {
           "Content-Type": "application/x-www-form-urlencoded",
+          "mode":"Access-Control-Allow-Origin"
         },
         method: "POST",
       })
