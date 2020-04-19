@@ -117,7 +117,7 @@ export default {
     ...mapActions(["getUserSignedUp"]),
     //---------------------------------------------------------------------------------------
     signUpUser() {
-      console.log(this.statementIsTrue);
+      // console.log(this.statementIsTrue);
 
       return this.$store.dispatch("getUserSignedUp", {
         userName: this.name,
@@ -149,7 +149,7 @@ export default {
 
   ////////////////////////////////////////////////////////////////////////////////////////////////////
   created() {
-    console.log(this.statementIsTrue);
+    // console.log(this.statementIsTrue);
   },
 };
 </script>

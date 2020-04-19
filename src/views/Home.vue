@@ -533,7 +533,7 @@ export default {
     //---------------------edicion que muestra o cierra el v-dialog seguun state true or false------    
     editState() {
       this.$store.dispatch("passBackEdit");
-      console.log(this.state);
+      // console.log(this.state);
     },
 
     //-----metodo creado para evitar la repeticion de arrays de objects en el computed productsToBuyCard------
@@ -607,7 +607,7 @@ export default {
 
     //----------------------------accion para modificar backend--------------------------
     AddAllProdCard() {
-      console.log(this.productsToBuyCard);
+      // console.log(this.productsToBuyCard);
       this.$store.dispatch("addPurchase", this.productsToBuyCard);
     } //se hace un dispatch sobre una accion del getter y se le pasa como payload el computed
     //encargado de fusionar en un solo array toda la matriz de arrays de productos seleccionados
@@ -653,7 +653,7 @@ export default {
 
     //----------------------------------------get state  true or false---------------
     state() {
-      console.log(this.getEditState);
+      // console.log(this.getEditState);
 
       return this.getEditState;
     },
@@ -723,7 +723,7 @@ export default {
     }, //getter para obtener todos los productos desde vuex
     //--------------------------------------------------------------------------------------------------------
     productsToBuyCard() {
-      console.log(this.$store.getters.getarrayProductsToBuy);
+      // console.log(this.$store.getters.getarrayProductsToBuy);
 
       let commiter = this.$store.getters.getarrayProductsToBuy; //se iguala a una variable para poder firtrarlo
 
@@ -740,7 +740,7 @@ export default {
       notRepeatedArrays.forEach(array => {
         array.forEach(merger => allInOne.push(merger));
       });
-      console.log(allInOne);
+      // console.log(allInOne);
 
       return allInOne;
     },

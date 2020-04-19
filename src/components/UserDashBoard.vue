@@ -74,7 +74,7 @@ export default {
     //-----------------------------------------------------
     getUserBoardUpdated() {
       return this.$store.getters.getUserBoard;
-      console.log(this.$store.getters.getUserBoard);
+      // console.log(this.$store.getters.getUserBoard);
     },
     //-----------------------------------------------------
     groupProds() {
@@ -89,7 +89,7 @@ export default {
   },
   /////////////////////////////////////////////////////////////////////////////////
   created() {
-    console.log(this.groupProds, this.getUserBoard.details_of_purchase.length);
+    // console.log(this.groupProds, this.getUserBoard.details_of_purchase.length);
   }
 };
 </script>

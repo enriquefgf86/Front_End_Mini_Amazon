@@ -288,7 +288,7 @@ export default {
             },
             product_id: this.ProductCard.product_id
           });
-          console.log(newVote);
+          // console.log(newVote);
         }
       }
     },
@@ -315,7 +315,7 @@ export default {
         this.unities = 0;
         this.getUserBoard;
       }
-      console.log(this.toBuy);
+      // console.log(this.toBuy);
       this.$store.dispatch("productsToBuyInCard", this.toBuy); //mandandose a vuex para su posterior proceso
     },
 
@@ -352,9 +352,9 @@ export default {
     // this.addProductSale();
     this.fetchAllProducts();
     // this.fetchUserIdProducts();
-    console.log(this.getAllProducts);
-    console.log(this.ProductCard.rate,this.ProductCard.people_voting_in_rate);
-    console.log(this.rating);
+    // console.log(this.getAllProducts);
+    // console.log(this.ProductCard.rate,this.ProductCard.people_voting_in_rate);
+    // console.log(this.rating);
     
     
 

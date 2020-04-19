@@ -260,13 +260,13 @@ export default {
     ]),
     //---------------------------------------Loader para cargar-------------------------------------------
     loading() {
-      console.log(this.getLoader);
+      // console.log(this.getLoader);
 
       return this.$store.getters.getLoader;
     },
     //--------------------------------------para obtener el json user board actualizado-------------------
     getBoardUpdated() {
-      console.log(this.$store.getters.getUserBoard);
+      // console.log(this.$store.getters.getUserBoard);
       return this.$store.getters.getUserBoard;
     },
     //---------------------metodo  que determina un objeto repetido por valores y key------------------
@@ -284,7 +284,7 @@ export default {
         };
       }
       return Object.values(objectRepeated);
-      console.log(ojectRepeated);
+      // console.log(ojectRepeated);
     },
 
     //-----------metodo que determina los descuentos por productos iguales mayores que 4 unidades-------------------------------------------
@@ -315,17 +315,17 @@ export default {
             );
             this.productFreeGlob.push(productFree),
               this.dicountProductFreeGlob.push(discountProductFree);
-            console.log(
-              this.getUserBoard.details_of_purchase[j].product_name,
-              productFree,
-              discountProductFree.toFixed(2)
-            );
+            // console.log(
+            //   this.getUserBoard.details_of_purchase[j].product_name,
+            //   productFree,
+            //   discountProductFree.toFixed(2)
+            // );
           }
         }
       }
 
       return Object.values(objectCreated);
-      console.log(Object.values(objectCreated));
+      // console.log(Object.values(objectCreated));
     },
 
     //--------metodo que determina un objeto unico para cada producto determiando su nombre y tipo de descuento
@@ -364,7 +364,7 @@ export default {
             .product_price;
 
           sum = sum + pricePurch;
-          console.log(pricePurch);
+          // console.log(pricePurch);
         }
         discountPlus5 = sum * 0.1;
         finalPrice = (sum - discountPlus5).toFixed(2);
@@ -402,13 +402,13 @@ export default {
       if (this.getState == true) {
         this.discountEquals, this.totalDiscount;
       }
-      console.log(
-        this.getState,
-        this.discountEquals,
-        this.objectUnique,
-        this.totalDiscEquals,
-        this.totalDiscount
-      );
+      // console.log(
+      //   this.getState,
+      //   this.discountEquals,
+      //   this.objectUnique,
+      //   this.totalDiscEquals,
+      //   this.totalDiscount
+      // );
     }
   }
 };
