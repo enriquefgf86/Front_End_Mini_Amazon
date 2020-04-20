@@ -2,7 +2,7 @@ import Vue from "vue";
 import Vuex from "vuex";
 import createPersistedState from "vuex-persistedstate";
 import router from "../router/index.js";
-const url = "https://secure-castle-82044.herokuapp.com/";
+const url = " https://cors-anywhere.herokuapp.com/https://secure-castle-82044.herokuapp.com/";
 
 Vue.use(Vuex);
 export default new Vuex.Store({
