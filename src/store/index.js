@@ -2,7 +2,7 @@ import Vue from "vue";
 import Vuex from "vuex";
 import createPersistedState from "vuex-persistedstate";
 import router from "../router/index.js";
-const url = " https://cors-anywhere.herokuapp.com/https://secure-castle-82044.herokuapp.com/";
+const url = "https://secure-castle-82044.herokuapp.com/";
 
 Vue.use(Vuex);
 export default new Vuex.Store({
@@ -380,7 +380,7 @@ export default new Vuex.Store({
 
     //------------------------------login user-----------------------------------
     getUserLogIn({ commit, dispatch }, payload) {
-      fetch("https://cors-anywhere.herokuapp.com/https://secure-castle-82044.herokuapp.com/api/login", {
+      fetch(url + "api/login", {
         credentials: "include",
         headers: {
           "Content-Type": "application/x-www-form-urlencoded",
@@ -420,7 +420,7 @@ export default new Vuex.Store({
     getUserSignedUp({ commit, dispatch }, payload) {
       // console.log(payload);
 
-      fetch("https://cors-anywhere.herokuapp.com/https://secure-castle-82044.herokuapp.com/mini/all_product/registering", {
+      fetch(url + "mini/all_product/registering", {
         credentials: "include",
         headers: {
           "Content-Type": "application/json",
