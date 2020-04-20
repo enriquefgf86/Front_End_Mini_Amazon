@@ -214,7 +214,7 @@ export default new Vuex.Store({
             alert("Error", data.Error);
           } else {
             alert("Successful", data);
-            dispatch("mini/all_products/user");
+            dispatch("fetchAllProducts");
           }
         })
         .catch(function(error) {
