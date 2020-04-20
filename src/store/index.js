@@ -134,7 +134,7 @@ export default new Vuex.Store({
         })
         .catch((error) => {
           //console.log(error);
-          alert("error", error);
+         error
         }); //haciendose el fetch a todos los productos disponibles para la venta
     },
 
