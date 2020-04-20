@@ -670,10 +670,10 @@ export default {
     },
 
     prov(){
-      if(this.allProductsProvider==null||this.allProductsProvider==undefined){
-        return this.allProductsProvider.length=0
+      if(this.allProductsProvider!=null||this.allProductsProvider!=undefined){
+        return this.allProductsProvider.length
       }
-      else return this.allProductsProvider.length
+      else return 0
     },
 
 
