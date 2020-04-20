@@ -660,9 +660,13 @@ export default {
 
     //--------if user is also provider detrmining how many products he has on sale------------------------
     allProductsProvider() {
-      return this.getAllProducts.products.filter(product => {
+      if(this.getAllProducts.products!=null){
+return this.getAllProducts.products.filter(product => {
         return product.product_provider === this.getAllProducts.user.user_name;
       });
+      }
+      else return 0
+      
     },
 
     //---------------function to get all products from vuex------------------------------------/
