@@ -604,6 +604,12 @@ export default {
         productId: this.getProdToEdit.product_id
       });
     },
+    prov(){
+      if(this.allProductsProvider!=null||this.allProductsProvider!=undefined){
+        return this.allProductsProvider.length
+      }
+      else return 0
+    },
 
     //----------------------------accion para modificar backend--------------------------
     AddAllProdCard() {
@@ -669,12 +675,7 @@ export default {
       }
     },
 
-    prov(){
-      if(this.allProductsProvider!=null||this.allProductsProvider!=undefined){
-        return this.allProductsProvider.length
-      }
-      else return 0
-    },
+    
 
 
     //---------------function to get all products from vuex------------------------------------/
