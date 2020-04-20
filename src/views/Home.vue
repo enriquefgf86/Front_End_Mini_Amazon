@@ -104,7 +104,7 @@
           id="stockProv"
           class="hidden-sm-and-down"
           v-if="getAllProducts.user.user_role=='seller'"
-        >Products on the Store: {{allProductsProvider.length==null?"No Products":allProductsProvider.length}} products</h4>
+        >Products on the Store: {{prov}} products</h4>
         <v-container class="d-flex flex-row justify-space-around">
           <v-btn
             style="width:150px"
@@ -497,7 +497,7 @@ export default {
           { id: 8, value: "Horror", selected: false }
         ]
       },
-      selected: false,//sentinela que determina que categoria y su dentro del objeto creado fue seleccionada
+      selected: false, //sentinela que determina que categoria y su dentro del objeto creado fue seleccionada
 
       //objeto creado para enviar al backend productsos editados
       ProductEdited: {
@@ -530,7 +530,7 @@ export default {
       return this.$store.dispatch("getuserLogOut");
     },
 
-    //---------------------edicion que muestra o cierra el v-dialog seguun state true or false------    
+    //---------------------edicion que muestra o cierra el v-dialog seguun state true or false------
     editState() {
       this.$store.dispatch("passBackEdit");
       // console.log(this.state);
@@ -555,8 +555,8 @@ export default {
     filterSearch(selectedCategory) {
       this.CategoriesDropDown = selectedCategory;
     },
-   
-   //----------------------------rate filter------------------------------------------------------
+
+    //----------------------------rate filter------------------------------------------------------
     rateSearch(selectedRatePlus) {
       this.RateDropDown = selectedRatePlus;
     },
@@ -660,12 +660,22 @@ export default {
 
     //--------if user is also provider detrmining how many products he has on sale------------------------
     allProductsProvider() {
-       if(this.getAllProducts.products!=null){
-return this.getAllProducts.products.filter(product => {
-        return product.product_provider === this.getAllProducts.user.user_name;
-      });
+      if (this.getAllProducts.products != null) {
+        return this.getAllProducts.products.filter(product => {
+          return (
+            product.product_provider === this.getAllProducts.user.user_name
+          );
+        });
       }
     },
+
+    prov(){
+      if(this.allProductsProvider.length>0){
+        return this.allProductsProvider.length
+      }
+      else return 0
+    },
+
 
     //---------------function to get all products from vuex------------------------------------/
     allProducts() {
@@ -763,7 +773,7 @@ return this.getAllProducts.products.filter(product => {
       );
     }, //validador del form para crear productos haciendo que se cumplimenten todos los fieds antes de validar
 
-   //------------------------------------------validador del producto editado---------------------------
+    //------------------------------------------validador del producto editado---------------------------
     validatorEdit() {
       return (
         this.ProductEdited.description !== "" &&
