@@ -104,7 +104,7 @@
           id="stockProv"
           class="hidden-sm-and-down"
           v-if="getAllProducts.user.user_role=='seller'"
-        >Products on the Store: {{allProductsProvider.length}} products</h4>
+        >Products on the Store: {{allProductsProvider.length==null?"No Products":allProductsProvider.length}} products</h4>
         <v-container class="d-flex flex-row justify-space-around">
           <v-btn
             style="width:150px"
