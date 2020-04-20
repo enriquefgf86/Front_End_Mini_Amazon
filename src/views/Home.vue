@@ -670,7 +670,7 @@ export default {
     },
 
     prov(){
-      if(this.allProductsProvider.length==null||this.allProductsProvider.length==undefined){
+      if(this.allProductsProvider==null||this.allProductsProvider==undefined){
         return this.allProductsProvider.length=0
       }
       else return this.allProductsProvider.length
