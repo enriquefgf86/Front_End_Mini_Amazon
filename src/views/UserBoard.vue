@@ -240,9 +240,9 @@ export default {
       );
       this.$store.dispatch("addProdToBuy", { purchases: idProds });
       this.$router.push("/myboard/buyerView");
-      setTimeout(() => {
-        location.reload();
-      }, 0.000001);
+      // setTimeout(() => {
+      //   location.reload();
+      // }, 0.000001);
     }
   },
   //en este paso ya en la vista del usario todos los productos listos[para adicionar entonces se procede
