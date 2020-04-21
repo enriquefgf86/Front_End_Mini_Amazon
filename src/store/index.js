@@ -455,7 +455,7 @@ export default new Vuex.Store({
         credentials: "include",
         headers: {
           "Content-Type": "application/x-www-form-urlencoded",
-          "mode":"Access-Control-Allow-Origin"
+          // "mode":"Access-Control-Allow-Origin"
         },
         method: "POST",
       })
