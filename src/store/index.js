@@ -119,7 +119,7 @@ export default new Vuex.Store({
   actions: {
     //-----------------OBTENIENDO TODOS LOS PRODUCTOS DEL JSON------------------------
     fetchAllProducts({ commit }) {
-      fetch(url+"/mini/all_products/user", {
+      fetch(url+"mini/all_products/user", {
         credentials: "include",
         method: "GET",
       })
@@ -171,7 +171,7 @@ export default new Vuex.Store({
     rateUpdater({ dispatch }, { product_id, ratePack }) {
       console.log(product_id, ratePack);
 
-      fetch(url+"/mini/all_products/user/product_rated/" + product_id, {
+      fetch(url+"mini/all_products/user/product_rated/" + product_id, {
         credentials: "include",
         headers: {
           "Content-Type": "application/json",
@@ -201,7 +201,7 @@ export default new Vuex.Store({
 
     //------------metodo se supone almacene las posibles compras del usuario en su dashboard---------
     addProdToBuy({ dispatch }, { purchases }) {
-      fetch(url+"/mini/all_products/allpurchase_view", {
+      fetch(url+"mini/all_products/allpurchase_view", {
         credentials: "include",
         headers: {
           "Content-Type": "application/json",
@@ -230,7 +230,7 @@ export default new Vuex.Store({
 
     //----------adding products from provider vue tpo the generl products on sale-------------------
     addProductSale({ dispatch }, { currentProduct }) {
-      fetch(url+"/mini/all_products/provider/product_added", {
+      fetch(url+"mini/all_products/provider/product_added", {
         credentials: "include",
         headers: {
           "Content-Type": "application/json",
@@ -293,7 +293,7 @@ export default new Vuex.Store({
     //-----------------------delete product-------------------------------
     deleteProviderProduct({ dispatch }, { currentDelProd, productId }) {
       // console.log(currentDelProd, productId);
-      fetch(url+"/mini/all_products/delete/" + productId, {
+      fetch(url+"mini/all_products/delete/" + productId, {
         credentials: "include",
         headers: {
           "Content-Type": "application/json",
@@ -372,7 +372,7 @@ export default new Vuex.Store({
 
     //----------------------------vista Final del Board de compras hechas por el usuario-----------------
     fetchingAllPurchasesViewBoardUser({ commit }) {
-      fetch(url+"/mini/all_products/user_dashboard/final_view", {
+      fetch(url+"mini/all_products/user_dashboard/final_view", {
         credentials: "include",
         method: "GET",
       })
@@ -393,7 +393,7 @@ export default new Vuex.Store({
 
     //------------------------------login user-----------------------------------
     getUserLogIn({ commit, dispatch }, payload) {
-      fetch(url+"/api/login", {
+      fetch(url+"api/login", {
         credentials: "include",
         headers: {
           "Content-Type": "application/x-www-form-urlencoded",
@@ -435,7 +435,7 @@ export default new Vuex.Store({
     getUserSignedUp({ commit, dispatch }, payload) {
       // console.log(payload);
 
-      fetch(url+"/mini/all_product/registering", {
+      fetch(url+"mini/all_product/registering", {
         credentials: "include",
         headers: {
           "Content-Type": "application/json",
@@ -468,7 +468,7 @@ export default new Vuex.Store({
 
     //-----------------------get user logged out------------------------------------------
     getuserLogOut({ commit }) {
-      fetch(url+"/api/logout", {
+      fetch(url+"api/logout", {
         credentials: "include",
         headers: {
           "Content-Type": "application/x-www-form-urlencoded",
