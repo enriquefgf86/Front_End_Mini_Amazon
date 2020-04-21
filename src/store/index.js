@@ -119,7 +119,7 @@ export default new Vuex.Store({
   actions: {
     //-----------------OBTENIENDO TODOS LOS PRODUCTOS DEL JSON------------------------
     fetchAllProducts({ commit }) {
-      fetch(url + "mini/all_products/user", {
+      fetch(url+"/mini/all_products/user", {
         credentials: "include",
         method: "GET",
       })
@@ -129,12 +129,14 @@ export default new Vuex.Store({
         })
         .then((response1) => {
           // console.log(response1);
+          response1;
           commit("setAllProducts", response1);
           // commit("settingLoader", false)
         })
         .catch((error) => {
           //console.log(error);
          error
+
         }); //haciendose el fetch a todos los productos disponibles para la venta
     },
 
@@ -167,9 +169,9 @@ export default new Vuex.Store({
 
     //--------------update rate of products and people voting--------------------------------------------/
     rateUpdater({ dispatch }, { product_id, ratePack }) {
-      // console.log(product_id, ratePack);
+      console.log(product_id, ratePack);
 
-      fetch(url + "mini/all_products/user/product_rated/" + product_id, {
+      fetch(url+"/mini/all_products/user/product_rated/" + product_id, {
         credentials: "include",
         headers: {
           "Content-Type": "application/json",
@@ -184,20 +186,22 @@ export default new Vuex.Store({
         })
         .then((data) => {
           if (data.Error) {
-            alert("Error", data.Error);
+            // alert("Error", data.Error);
+            data.Error
           } else {
-            alert("Successful Rating", data);
+            // alert("Successful Rating", data);
+            data;
             dispatch("fetchAllProducts");
           }
         })
-        .catch(function(error) {
-          alert("Request failure: ", error);
+        .catch((error)=> {
+          alert("Request on Rate: ", error);
         });
     },
 
     //------------metodo se supone almacene las posibles compras del usuario en su dashboard---------
     addProdToBuy({ dispatch }, { purchases }) {
-      fetch(url + "mini/all_products/allpurchase_view", {
+      fetch(url+"/mini/all_products/allpurchase_view", {
         credentials: "include",
         headers: {
           "Content-Type": "application/json",
@@ -211,20 +215,22 @@ export default new Vuex.Store({
         })
         .then((data) => {
           if (data.Error) {
-            alert("Error", data.Error);
+            alert("Error on Buy Purchase", data.Error);
           } else {
-            alert("Successful", data);
+            // alert("Successful", data);
+            data;
             dispatch("fetchAllProducts");
+            dispatch("fetchingAllPurchasesViewBoardUser");
           }
         })
-        .catch(function(error) {
-          alert("Request failure: ", error);
+        .catch(error=> {
+          console.log("Request failure: ", error);
         });
     },
 
     //----------adding products from provider vue tpo the generl products on sale-------------------
     addProductSale({ dispatch }, { currentProduct }) {
-      fetch(url + "mini/all_products/provider/product_added", {
+      fetch(url+"/mini/all_products/provider/product_added", {
         credentials: "include",
         headers: {
           "Content-Type": "application/json",
@@ -238,14 +244,16 @@ export default new Vuex.Store({
         })
         .then((data) => {
           if (data.Error) {
-            alert("Error", data.Error);
+            // alert("Error on Add Product on Sale", data.Error);
+            data.Error;
           } else {
-            alert("Successful", data);
+            // alert("Successful", data);
+            data;
             dispatch("fetchAllProducts");
           }
         })
-        .catch(function(error) {
-          alert("Request failure: ", error);
+        .catch((error)=> {
+          alert("Error on Add Product on Sale: ", error);
         });
     },
     //-------------------------editing product--------------------------------------
@@ -253,7 +261,7 @@ export default new Vuex.Store({
       // console.log(currentEditProduct, productId);
 
       fetch(
-        url + "mini/all_products/provider/product_edited/" + productId,
+        "/mini/all_products/provider/product_edited/" + productId,
         {
           credentials: "include",
           headers: {
@@ -269,21 +277,23 @@ export default new Vuex.Store({
         })
         .then((data) => {
           if (data.Error) {
-            alert("Error", data.Error);
+            // alert("Error", data.Error);
+            data.Error;
           } else {
-            alert("Successful Editing", data);
+            // alert("Successful Editing", data);
+            data;
             dispatch("fetchAllProducts");
           }
         })
-        .catch(function(error) {
-          alert("Request failure: ", error);
+        .catch((error)=> {
+          alert("Error on Edit Product: ", error);
         });
     },
 
     //-----------------------delete product-------------------------------
     deleteProviderProduct({ dispatch }, { currentDelProd, productId }) {
       // console.log(currentDelProd, productId);
-      fetch(url + "mini/all_products/delete/" + productId, {
+      fetch(url+"/mini/all_products/delete/" + productId, {
         credentials: "include",
         headers: {
           "Content-Type": "application/json",
@@ -297,14 +307,16 @@ export default new Vuex.Store({
         })
         .then((data) => {
           if (data.Error) {
-            alert("Error", data.Error);
+            // alert("Error", data.Error);
+            data.Error;
           } else {
-            alert("Successful", data);
+            // alert("Successful", data);
+            data;
             dispatch("fetchAllProducts");
           }
         })
-        .catch(function(error) {
-          alert("Request failure: ", error);
+        .catch((error)=> {
+          alert("Error on Delete Product: ", error);
         });
     },
 
@@ -338,7 +350,7 @@ export default new Vuex.Store({
     fetchUserIdProducts({ commit, getters }) {
       let userId = getters.getAllProducts.user.user_id;
       fetch(
-        url + "mini/all_products/one_selected/purchase_view/" + userId,
+        "/mini/all_products/one_selected/purchase_view/" + userId,
         {
           credentials: "include",
           method: "GET",
@@ -354,13 +366,13 @@ export default new Vuex.Store({
         })
         .catch((err) => {
           // console.log(err);
-          alert("error", err);
+          alert("Error on Fetching id Product", err);
         });
     },
 
     //----------------------------vista Final del Board de compras hechas por el usuario-----------------
     fetchingAllPurchasesViewBoardUser({ commit }) {
-      fetch(url + "mini/all_products/user_dashboard/final_view", {
+      fetch(url+"/mini/all_products/user_dashboard/final_view", {
         credentials: "include",
         method: "GET",
       })
@@ -374,13 +386,14 @@ export default new Vuex.Store({
         })
         .catch((err) => {
           //console.log(err);
-          alert("error", err);
+          // alert("Error on fetchingAllPurchasesViewBoardUser ", err);
+          err;
         });
     },
 
     //------------------------------login user-----------------------------------
     getUserLogIn({ commit, dispatch }, payload) {
-      fetch(url + "api/login", {
+      fetch(url+"/api/login", {
         credentials: "include",
         headers: {
           "Content-Type": "application/x-www-form-urlencoded",
@@ -393,17 +406,19 @@ export default new Vuex.Store({
       })
         .then((userData) => {
           if (userData.Error) {
-            alert("not user", userData);
+            // alert("not user", userData);
+            userData;
             commit("setUserAuth", false);
           } else {
-            alert("Success", userData);
+            // alert("Success", userData);
+            userData;
             commit("setUserAuth", true);
             router.push("/"), dispatch("fetchAllProducts");
           }
         })
         .catch((error) => {
           //console.log(error);
-          alert("error", error);
+          alert("Error on user Login", error);
         });
       function getBody(json) {
         var body = [];
@@ -420,7 +435,7 @@ export default new Vuex.Store({
     getUserSignedUp({ commit, dispatch }, payload) {
       // console.log(payload);
 
-      fetch(url + "mini/all_product/registering", {
+      fetch(url+"/mini/all_product/registering", {
         credentials: "include",
         headers: {
           "Content-Type": "application/json",
@@ -434,10 +449,12 @@ export default new Vuex.Store({
         })
         .then((userData1) => {
           if (userData1.Error) {
-            alert("fail on register", userData1);
+            // alert("fail on register", userData1);
+            userData1;
             commit("setUserAuth", false);
           } else {
-            alert("Success", userData1);
+            // alert("Success", userData1);
+            userData1;
             dispatch("getUserLogIn", payload);
             commit("setUserAuth", true);
             // router.push("/")
@@ -445,13 +462,13 @@ export default new Vuex.Store({
         })
         .catch((error) => {
           //console.log(error);
-          alert("error", error);
+          alert("Error on SignUp", error);
         });
     },
 
     //-----------------------get user logged out------------------------------------------
     getuserLogOut({ commit }) {
-      fetch(url + "api/logout", {
+      fetch(url+"/api/logout", {
         credentials: "include",
         headers: {
           "Content-Type": "application/x-www-form-urlencoded",
@@ -460,15 +477,16 @@ export default new Vuex.Store({
         method: "POST",
       })
         .then((userData) => {
-          alert("Request success: ", userData);
+          // alert("Request success: ", userData);
+          userData;
           commit("setUserAuth", false);
           router.push("/logIn");
           setTimeout(() => {
             location.reload();
           }, 0.1);
         })
-        .catch(function(error) {
-          alert("Request failure: ", error);
+        .catch((error)=> {
+          alert("Error on Log Out: ", error);
         });
     },
   },

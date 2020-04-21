@@ -284,9 +284,11 @@ export default {
           this.$store.dispatch("rateUpdater", {
             ratePack: {
               productRate: newVote[1],
-              peopleRating: newVote[0]
+              peopleRating: newVote[0],
+              // providers:this.ProductCard.product_provider
             },
-            product_id: this.ProductCard.product_id
+            product_id: this.ProductCard.product_id,
+            
           });
           // console.log(newVote);
         }
@@ -351,6 +353,7 @@ export default {
   created() {
     // this.addProductSale();
     this.fetchAllProducts();
+    
     // this.fetchUserIdProducts();
     // console.log(this.getAllProducts);
     // console.log(this.ProductCard.rate,this.ProductCard.people_voting_in_rate);
