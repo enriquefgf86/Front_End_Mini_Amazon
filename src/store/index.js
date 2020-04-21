@@ -169,7 +169,7 @@ export default new Vuex.Store({
 
     //--------------update rate of products and people voting--------------------------------------------/
     rateUpdater({ dispatch }, { product_id, ratePack }) {
-      console.log(product_id, ratePack);
+      // console.log(product_id, ratePack);
 
       fetch(url+"mini/all_products/user/product_rated/" + product_id, {
         credentials: "include",
