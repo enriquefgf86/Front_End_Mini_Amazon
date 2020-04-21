@@ -178,7 +178,8 @@ export default new Vuex.Store({
          
         },
         method: "POST",
-        body: JSON.stringify(ratePack),
+        // body: JSON.stringify(ratePack),
+        body:ratePack.productRate
       })
         .then((newData) => {
           // console.log("data sent :", JSON.stringify(newData));
