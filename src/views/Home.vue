@@ -42,7 +42,8 @@
                 id="purchDrawer"
                 color="lime lighten-2 mb-5 ml-3"
                 x-small
-                v-if="getUserBoardPurch.all_user_purchases.length>0"
+                v-if="getUserBoardPurch.all_user_purchases.length>0||getUserBoardPurch.all_user_purchases!=undefined&&
+                getUserBoardPurch.all_user_purchases.length>0"
               >
                 Purchases
                 <img id="imgView" src="../assets/view.png" alt="view" />
@@ -82,7 +83,8 @@
 
           <router-link to="/myboard/buyerView">
             <v-btn
-              v-if="getUserBoardPurch.all_user_purchases.length>0"
+              v-if="getUserBoardPurch.all_user_purchases.length>0||getUserBoardPurch.all_user_purchases!=undefined&&
+                getUserBoardPurch.all_user_purchases.length>0"
               class="hidden-sm-and-down"
               style="width:135px"
               id="bottomYourPurch"

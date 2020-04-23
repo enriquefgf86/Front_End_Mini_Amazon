@@ -14,9 +14,9 @@ export default {
   methods: {
     toHome() {
       this.$router.push("/");
-      setTimeout(() => {
-        location.reload();
-      }, 0.01);
+      // setTimeout(() => {
+      //   location.reload();
+      // }, 0.01);
     }
   }
 };

@@ -45,7 +45,7 @@ export default {
     toHome() {
       this.$router.push("/");
       setTimeout(() => {
-        location.reload()
+        // location.reload()
       }, 0.0);
     }
   },

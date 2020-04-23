@@ -285,9 +285,10 @@ export default {
             ratePack: {
               productRate: newVote[1],
               // peopleRating: newVote[0],
-              // providers:this.ProductCard.product_provider
+              
             },
             product_id: this.ProductCard.product_id,
+            providers:this.ProductCard.product_provider
             
           });
           // console.log(newVote);
